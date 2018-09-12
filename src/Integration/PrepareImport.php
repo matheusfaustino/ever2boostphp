@@ -65,6 +65,10 @@ class PrepareImport
             foreach ($notebooks as $notebook) {
                 $this->output->writeln(['', 'Importing notes from <info>'.$notebook->getName().'</info>']);
                 $notes = $this->evernote->getNotesFromNotebook($notebook);
+                if ( ! $notes || \count($notes) === 0) {
+                    $this->output->writeln('<comment>Skipping notebook, no notes inside.</comment>');
+                    continue;
+                }
                 $progressBar = new ProgressBar($this->output, \count($notes));
                 $progressBar->display();
 
