@@ -1,0 +1,11 @@
+createdAt: "%s"
+updatedAt: "%s"
+content: '''
+%s
+'''
+folder: "%s"
+title: "%s"
+type: "MARKDOWN_NOTE"
+tags: []
+isStarred: false
+isTrashed: false

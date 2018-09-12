@@ -1,0 +1,32 @@
+parameters:
+  git_dir: .
+  bin_dir: vendor/bin
+  tasks:
+    composer: ~
+    git_blacklist:
+      keywords:
+        - "die("
+        - "var_dump("
+        - "exit;"
+      whitelist_patterns: []
+      triggered_by: ['php']
+      regexp_type: G
+    git_branch_name: ~
+    git_commit_message: ~
+    phpcpd:
+      directory: '.'
+      exclude: ['vendor']
+      names_exclude: []
+      regexps_exclude: []
+      fuzzy: false
+      min_lines: 5
+      min_tokens: 70
+      triggered_by: ['php']
+    phpcs:
+      standard: 'PSR1'
+      encoding: utf-8
+      ignore_patterns: ['vendor']
+      triggered_by: [php]
+    phplint: ~
+    phpstan: ~
+    securitychecker: ~
