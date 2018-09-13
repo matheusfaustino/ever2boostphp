@@ -2,7 +2,8 @@
   "name": "matheusfaustino/ever2boostphp",
   "description": "CLI App that helps you import you notes from evernote to boostnote.",
   "license": "MIT",
-  "type": "project",
+  "readme": "README.md",
+  "type": "library",
   "authors": [
     {
       "name": "Matheus Faustino",
@@ -23,7 +24,6 @@
     "ext-json": "*",
     "adrienrn/php-mimetyper": "^0.2.1",
     "evernote/evernote-cloud-sdk-php": "^2.0",
-    "league/html-to-markdown": "^4.7",
     "ramsey/uuid": "^2.9",
     "react/http": "^0.8.3",
     "symfony/console": "^4.1",
