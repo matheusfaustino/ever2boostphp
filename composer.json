@@ -1,16 +1,33 @@
 {
   "name": "matheusfaustino/ever2boostphp",
-  "description": "ever2boostphp",
+  "description": "CLI App that helps you import you notes from evernote to boostnote.",
   "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Matheus Faustino",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/matheusfaustino/ever2boostphp/issues"
+  },
+  "keywords": [
+    "evernote",
+    "import",
+    "boostnote"
+  ],
+  "prefer-stable": true,
   "require": {
-    "symfony/console": "^4.1",
     "php": ">=7.1",
     "ext-json": "*",
-    "react/http": "^0.8.3",
+    "adrienrn/php-mimetyper": "^0.2.1",
     "evernote/evernote-cloud-sdk-php": "^2.0",
     "league/html-to-markdown": "^4.7",
-    "adrienrn/php-mimetyper": "^0.2.1",
     "ramsey/uuid": "^2.9",
+    "react/http": "^0.8.3",
+    "symfony/console": "^4.1",
+    "symfony/filesystem": "^4.1",
     "symfony/process": "^4.1"
   },
   "require-dev": {
@@ -27,5 +44,15 @@
     "psr-4": {
       "Ever2BoostPHP\\": "src/"
     }
-  }
+  },
+  "config": {
+    "platform": {
+      "php": "7.1.3"
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "bin": [
+    "ever2boostphp"
+  ]
 }
