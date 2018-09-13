@@ -4,14 +4,15 @@
 use Ever2BoostPHP\Command\Ever2BoostPHP;
 use Symfony\Component\Console\Application;
 
-// try it local
-$autoloaderComposer = __DIR__.'/vendor/autoload.php';
-if ( ! is_file($autoloaderComposer)) {
-    // get autoload from inside of a vendor folder
-    $autoloaderComposer = __DIR__.'/../autoload.php';
+/* @see https://github.com/sebastianbergmann/phpunit/blob/master/phpunit */
+foreach ([__DIR__.'/../../autoload.php', __DIR__.'/../vendor/autoload.php', __DIR__.'/vendor/autoload.php'] as $file) {
+    if (file_exists($file)) {
+        define('PHPUNIT_COMPOSER_INSTALL', $file);
+        break;
+    }
 }
 
-require $autoloaderComposer;
+require PHPUNIT_COMPOSER_INSTALL;
 
 $command = new Ever2BoostPHP();
 $application = new Application(Ever2BoostPHP::class, Ever2BoostPHP::VERSION);
