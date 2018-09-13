@@ -4,7 +4,14 @@
 use Ever2BoostPHP\Command\Ever2BoostPHP;
 use Symfony\Component\Console\Application;
 
-require __DIR__.'/vendor/autoload.php';
+// try it local
+$autoloaderComposer = __DIR__.'/vendor/autoload.php';
+if ( ! is_file($autoloaderComposer)) {
+    // get autoload from inside of a vendor folder
+    $autoloaderComposer = __DIR__.'/../autoload.php';
+}
+
+require $autoloaderComposer;
 
 $command = new Ever2BoostPHP();
 $application = new Application(Ever2BoostPHP::class, Ever2BoostPHP::VERSION);
