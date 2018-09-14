@@ -107,8 +107,8 @@ final class Ever2BoostPHP extends Command
                 Factory::create(),
                 self::DEFAULT_PORT_LOCALSERVER,
                 $input->getOption('sandbox'),
-                $input->getOption('consumerKey'),
-                $input->getOption('consumerSecret'),
+                $input->getOption('consumerKey') ?? 'electronimportexport',
+                $input->getOption('consumerSecret') ?? 'bcc3bce1eb287730',
                 new Browser(new Process('')),
                 $output,
                 new Filesystem()
